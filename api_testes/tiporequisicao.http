@@ -1,0 +1,45 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVhYzhmMTE1ZDUzZDdlZDU0MTIzMjkiLCJub21lIjoiVGVzdGUiLCJpYXQiOjE2NTk1NTQwMzcsImV4cCI6MTY1OTU1NzYzN30.EeNXh6UZLP5iQjHq68S74Mr5a03iWREUmu5COGe_7_8
+
+# Obter a lista de tiporequisicoes
+GET http://localhost:3000/api/tiporequisicoes
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Inserir novo tiporequisicoes
+POST http://localhost:3000/api/tiporequisicoes
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "descricao": "Atv Mestra"
+}
+###
+
+# Alterar tiporequisicoes
+PUT http://localhost:3000/api/tiporequisicoes
+Content-Type: application/json
+
+{
+ "_id": "623a6591a561b578730212ad",
+ "descricao": "Heavy"
+}
+###
+
+# Excluir um tiporequisicoes
+DELETE http://localhost:3000/api/tiporequisicoes/623a6591a561b578730212ad
+Content-Type: application/json
+###
+
+# Obter pelo id de tiporequisicoes
+
+GET http://localhost:3000/api/tiporequisicoes/623a65e7a561b578730212b4
+Content-Type: application/json
+###
+
+# Obter tiporequisicoes filtrando
+
+GET http://localhost:3000/api/tiporequisicoes/filtro/Atv Mestra
+Content-Type: application/json
+###

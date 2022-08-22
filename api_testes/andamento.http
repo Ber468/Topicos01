@@ -1,0 +1,53 @@
+@apiUrl = http://localhost:3000/api 
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVhYzhmMTE1ZDUzZDdlZDU0MTIzMjkiLCJub21lIjoiVGVzdGUiLCJpYXQiOjE2NTk1NTQwMzcsImV4cCI6MTY1OTU1NzYzN30.EeNXh6UZLP5iQjHq68S74Mr5a03iWREUmu5COGe_7_8
+GET {{apiUrl}}/andamento
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Inserir novo andamento
+POST {{apiUrl}}/andamento
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "titulo": "t121sadada3",
+ "descricao": "teste12313",
+ "dataHora": "2020-01-25T17:32:25.000Z",
+ "Colaborador": "62eac8f115d53d7ed5412329",
+ "Atividade": "62eacadb5b35b79b40e21791"
+}
+###
+
+
+# Alterar andamento
+PUT {{apiUrl}}/andamento
+Content-Type: application/json
+
+{
+ "_id": "623a7740bcaea1f0e69c1d82",
+ "dataHora": "",
+ "titulo": "VSFD",
+ "descricao": "ASDJAHDUA",
+ "Colaborador":"623a5a95226f50820ef6a24e",
+ "Atividade": "623a767d8cc719a204d44742"
+}
+###
+
+# Excluir um andamento
+DELETE http://localhost:3000/api/andamento/623a7740bcaea1f0e69c1d82
+Content-Type: application/json
+###
+
+# Obter pelo id de andamento
+
+GET http://localhost:3000/api/andamento/623a6ed6ff7e907cd1a1b67d
+Content-Type: application/json
+###
+
+# Obter andamento filtrando
+
+GET http://localhost:3000/api/andamento/filtro/t1
+Content-Type: application/json
+###

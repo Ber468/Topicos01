@@ -1,0 +1,60 @@
+@apiUrl = http://localhost:3000/api 
+
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVhYzhmMTE1ZDUzZDdlZDU0MTIzMjkiLCJub21lIjoiVGVzdGUiLCJpYXQiOjE2NTk1NTQwMzcsImV4cCI6MTY1OTU1NzYzN30.EeNXh6UZLP5iQjHq68S74Mr5a03iWREUmu5COGe_7_8
+
+# Obter a lista de requisicao
+GET {{apiUrl}}/requisicao
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Inserir novo requisicao
+POST {{apiUrl}}/requisicao
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "titulo": "t1",
+ "descricao": "teste",
+ "dataHoraCriada": "2022-01-25T17:32:25.000Z",
+ "status": "Ativo",
+ "prazoAtendimento": "2022-02-05T17:32:25.000Z",
+ "TipoRequisicao": "62eaca6e5b35b79b40e21786",
+ "Solicitante": "62eac9b75b35b79b40e2177d"
+}
+###
+
+
+# Alterar requisicao
+PUT {{apiUrl}}/requisicao
+Content-Type: application/json
+
+{
+ "_id": "623a72ef16e4b4474e19af80",
+ "titulo": "teste222",
+ "descricao": "2222",
+ "dataHoraCriada": "2022-01-25T17:32:25.000Z",
+ "status": "Inativo",
+ "prazoAtendimento": "2022-02-05T17:32:25.000Z",
+ "TipoRequisicao": "623a65e7a561b578730212b4",
+ "Solicitante": "623a62a1336a9f8f2d397df8"
+}
+###
+
+# Excluir um requisicao
+DELETE http://localhost:3000/api/requisicao/623a73064516bb00b1cb4c1c
+Content-Type: application/json
+###
+
+# Obter pelo id de requisicao
+
+GET http://localhost:3000/api/requisicao/623a72ef16e4b4474e19af80
+Content-Type: application/json
+###
+
+# Obter requisicao filtrando
+
+GET http://localhost:3000/api/requisicao/filtro/2222
+Content-Type: application/json
+###

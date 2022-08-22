@@ -1,0 +1,74 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmVhYzhmMTE1ZDUzZDdlZDU0MTIzMjkiLCJub21lIjoiVGVzdGUiLCJpYXQiOjE2NTk1NTQwMzcsImV4cCI6MTY1OTU1NzYzN30.EeNXh6UZLP5iQjHq68S74Mr5a03iWREUmu5COGe_7_8
+# Obter a lista
+GET http://localhost:3000/api/colaboradores
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Inserir novo usuário
+POST http://localhost:3000/api/colaboradores
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "nome": "Jaqson Dalbosco",
+ "email": "jaqson@upf.br",
+ "celular": "99999-9999",
+ "senha": "123"
+}
+###
+
+
+# Obter a lista de colaboradores
+GET http://localhost:3000/api/colaboradores
+Content-Type: application/json
+###
+
+# Teste Login
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+ "email": "teste@gmail.com",
+ "senha": "123"
+}
+###
+
+# Inserir novo colaboradores
+POST http://localhost:3000/api/colaboradores
+Content-Type: application/json
+
+{
+ "nome": "Teste", "email": "teste@gmail.com",
+ "senha": "123"
+}
+###
+
+# Alterar colaboradores
+PUT http://localhost:3000/api/colaboradores
+Content-Type: application/json
+
+{
+ "_id": "623a5a60226f50820ef6a24b",
+ "nome": "Bruno",
+ "email": "bruno@teste.com",
+ "senha" : "321"
+}
+###
+
+# Excluir um colaboradores
+DELETE http://localhost:3000/api/colaboradores/623a5a60226f50820ef6a24b
+Content-Type: application/json
+###
+
+# Obter pelo id de colaboradores
+
+GET http://localhost:3000/api/colaboradores/623a5cbde63a2f26dabcd641
+Content-Type: application/json
+###
+
+# Obter colaboradores filtrando
+
+GET http://localhost:3000/api/colaboradores/filtro/Gustavo
+Content-Type: application/json
+###
